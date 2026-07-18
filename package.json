@@ -1,0 +1,15 @@
+{
+  "name": "playwrightframeworkproject17july",
+  "version": "1.0.0",
+  "description": "HV Playwright Project",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Mohan Goud",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1"
+  }
+}
