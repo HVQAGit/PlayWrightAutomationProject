@@ -23,7 +23,7 @@ await page.pause();
 //LoginPage.performDoLogout();
 LoginPage.ClickResellerRequestsTab();
 
-//comment
+// remove comment
 
 await page.waitForTimeout(15000); 
 });
