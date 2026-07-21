@@ -1,4 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+
+
+const ENV = process.env.ENV || "qa";// if user is passing any env at the run time or default qa 
+console.log('Running tests on Environment: ', ENV);
+
+//console.log('Running tests on Environment: ',  'config/.env.${ENV}' );
+dotenv.config({path: `config/.env.${ENV}` });  // pass path of the environmnet file
+
+
 
 
 export default defineConfig({
@@ -18,7 +28,8 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-     baseURL: 'https://xgs-uat.hitachivantara.com/',
+     // baseURL: 'https://xgs-uat.hitachivantara.com/',
+     baseURL:process.env.BASEURL,
      screenshot :'only-on-failure',
      video : 'retain-on-failure',
      trace : 'on-first-retry',

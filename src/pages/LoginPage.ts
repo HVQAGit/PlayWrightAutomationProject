@@ -1,9 +1,18 @@
 import { Locator, Page } from "@playwright/test";
 import { BasePage } from "./BasePage";
+import dotenv from 'dotenv';
+
+
+
+import path from 'path';
+
+
 
 
 export class loginPage extends BasePage{
 //private  locators 
+
+
 private readonly email:Locator;  // locator is type of the variable
 private readonly password:Locator;
 private readonly continuebtn:Locator;
@@ -37,9 +46,9 @@ constructor(page:Page){  // constructor is public because to allow other/externa
 
 async goToLoginPage():Promise<void> {
  
-    // as we be using awaits in the methods we need to return "async" 
-    await this.page.goto('');
-    ////
+   
+    await this.page.goto(process.env.BASE_URL!);
+   
 }
 
 async getLoginPageTitle():Promise<string>{
@@ -48,8 +57,10 @@ async getLoginPageTitle():Promise<string>{
 
 
 }
+
+//process.env.USERNAME!
 async performDoLogin(username : string, password : string ){
- 
+
  console.log(`user creds: ${username}:${password}`);
  await this.email.fill(username);
  await this.continuebtn.click();
@@ -91,7 +102,7 @@ async ClickResellerRequestsTab(){
    this.ResellerReqTab2.click();
       this.ResellerReqTab2.allTextContents();
    //this.ResellerReqTab2.getByTitle();
-   console.log('ResellerReqTab2:',this.ResellerReqTab2.getByTitle("Reseller Requests")); 
+   //console.log('ResellerReqTab2:',this.ResellerReqTab2.getByTitle("Reseller Requests")); 
    this.page.pause();
    //span[text()='Reseller Requests']
   
