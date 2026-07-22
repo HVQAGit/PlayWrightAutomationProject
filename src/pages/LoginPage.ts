@@ -46,16 +46,9 @@ constructor(page:Page){  // //constructor is public because to allow other/exter
 
 async goToLoginPage():Promise<void> {
 
-    console.log("BASE_URL==");
-   console.log(process.env.BASE_URL!.length);
-   console.log("BUSERNAME==");
-   console.log(process.env.USERNAME!.length);
-   console.log("PASiSWORD==");
-   console.log(process.env.PASSWORD!.length);
-      
-  
    
-  await this.page.goto(process.env.BASE_URL!);
+   
+  await this.page.goto(process.env.BASE_URL_YML!);
 
    
 }

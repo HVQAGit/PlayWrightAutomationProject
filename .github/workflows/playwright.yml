@@ -57,10 +57,10 @@ jobs:
         run: npx playwright test --project=chromium
         env:
           ENV: ${{ github.event.inputs.environment || 'QA' }}
-          USERNAME: ${{ secrets.USER_NAME }}
-          BASE_URL: ${{ secrets.BASE_URL }}
+          USERNAME_YML: ${{ secrets.XGS_USER}}
+          BASE_URL_YML: ${{ secrets.XGS_URL}}
          # USERNAME: ${{ secrets.USERNAME }}
-          PASSWORD: ${{ secrets.PASSWORD }}
+          PASSWORD_YML: ${{ secrets.XGS_PASSWORD}}
          
 
       - name: Upload HTML Report
