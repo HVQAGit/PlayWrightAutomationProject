@@ -10,7 +10,7 @@ import path from 'path';
 
 
 export class loginPage extends BasePage{
-//private  locators 
+//private  locators //
 
 
 private readonly email:Locator;  // locator is type of the variable
