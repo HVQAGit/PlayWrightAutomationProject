@@ -30,8 +30,10 @@ console.log("PASSWORD=");
 console.log(password);
 console.log("*******************checking in login spec file end****************");
 
+
+
 //await LoginPage.performDoLogin('metal-leather@5t4sxhkg.mailosaur.net','Hitachi#123');
-await LoginPage.performDoLogin(username ,password);
+await LoginPage.performDoLogin(process.env.USER_NAME! ,process.env.PASSWORD!);
 //expect(pageTitle).toBe('Hitachi Vantara xGS TEST');
 expect(pageTitle).toContain('Hitachi Vantara xGS TEST');
 await page.pause();
