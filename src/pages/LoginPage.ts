@@ -54,7 +54,7 @@ async goToLoginPage():Promise<void> {
    console.log("PASSWORD==");
    console.log(process.env.PASSWORD!);
   await this.page.goto(process.env.BASE_URL!);
-
+//
    
 }
 
