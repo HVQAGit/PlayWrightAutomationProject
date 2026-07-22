@@ -20,8 +20,8 @@ await LoginPage.goToLoginPage();
 await LoginPage.getLoginPageTitle();
 const pageTitle=await LoginPage.getLoginPageTitle();
 console.log('login page Title', pageTitle);
-const username: string = process.env.USER_NAME!;
-const password: string = process.env.PASSWORD!;
+const username: string = process.env.USER_NAME!.toString();
+const password: string = process.env.PASSWORD!.toString();
 
 console.log("*******************checking in login spec file start ****************");
 console.log("USER_NAME=");//
