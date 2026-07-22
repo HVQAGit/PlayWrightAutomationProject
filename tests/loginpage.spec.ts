@@ -14,7 +14,7 @@ test('login page test',async({page})=>{
 let LoginPage = new loginPage(page);
 
 
-
+//
 //console.log('Env Variable Value inside login spec', process.env); 
 await LoginPage.goToLoginPage();
 await LoginPage.getLoginPageTitle();
