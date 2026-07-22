@@ -60,7 +60,8 @@ jobs:
           BASE_URL: ${{ secrets.BASE_URL }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
-          
+        run: echo "From YAml File"  
+        run: echo "${{ BASE_URL }}" 
 
       - name: Upload HTML Report
         if: always()
@@ -72,7 +73,7 @@ jobs:
 
       - name: Upload Allure Results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: allure-results-${{ github.run_id }}
           path: allure-results/
