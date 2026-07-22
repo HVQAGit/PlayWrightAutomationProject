@@ -60,8 +60,7 @@ jobs:
           BASE_URL: ${{ secrets.BASE_URL }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: echo "From YAml File"  
-        run: echo "${{ BASE_URL }}" 
+         
 
       - name: Upload HTML Report
         if: always()
