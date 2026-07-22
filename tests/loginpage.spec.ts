@@ -24,7 +24,7 @@ const username: string = process.env.USER_NAME!;
 const password: string = process.env.PASSWORD!;
 
 console.log("*******************checking in login spec file start ****************");
-console.log("USER_NAME=");
+console.log("USER_NAME=");//
 console.log(username);
 console.log("PASSWORD=");
 console.log(password);
