@@ -23,7 +23,7 @@ private readonly LogoutXpath:Locator;
 private readonly LogoutAltText:Locator; 
 private readonly ResellerReqTab:Locator;
 private readonly ResellerReqTab2:Locator;
-
+private readonly LoginPageAfterLogout:Locator;
 
 constructor(page:Page){  // //constructor is public because to allow other/external file to create object 
     super(page)    // by mentioning super we are telling to call parent class constructor
@@ -39,6 +39,7 @@ constructor(page:Page){  // //constructor is public because to allow other/exter
     this.LogoutAltText=page.getByRole('option').getByAltText('Logout');
     this.ResellerReqTab=page.getByText('Reseller Requests', { exact: true });
     this.ResellerReqTab2=page.locator("//span[text()='Reseller Requests']");
+    this.LoginPageAfterLogout=page.getByRole('button', { name: 'Continue', exact: true });
     
    
 }
@@ -83,13 +84,11 @@ async performDoLogin(username : string, password : string ){
 async performDoLogout( ){
  
     await this.Logoutbtn.click();
-  
-     //comments
-
     await this.Logoutlink.click();
     await this.page.waitForURL('https://auth-stage.hitachivantara.com/');
-  
-  
+   // const Tabstext: string = await this.ResellerReqTab2.textContent() ?? "";
+      const LoginPageAfterLogoutText: string = await this.LoginPageAfterLogout.textContent() ?? "";
+    console.log(`Stored String Value: ${LoginPageAfterLogoutText}`);
   
 }
 
@@ -103,28 +102,18 @@ async ClickHomePageButton():Promise<string>{
 }
 async ClickResellerRequestsTab(){
  
-  //  return await this.HomePageBtn.getByTitle();
- //   await this.ResellerReqTab.innerText();
-   // return await this.ResellerReqTab.innerText();
-
-    // const TabName = await this.ResellerReqTab.click();//  Pauses until the title string returns
-     //console.log('TabName:', TabName); 
+  
      
    this.ResellerReqTab2.click();
-      this.ResellerReqTab2.allTextContents();
-      //this.ResellerReqTab2.getByText();
-   //this.ResellerReqTab2.getByTitle();
-   //console.log('ResellerReqTab2:',this.ResellerReqTab2.getByTitle("Reseller Requests")); 
+   this.ResellerReqTab2.allTextContents();
    this.page.pause();
-   //span[text()='Reseller Requests']
-  
    
-
+  
 // 2. Extract and store the text as a string
-const invoiceText: string = await this.ResellerReqTab2.textContent() ?? "";
+const Tabstext: string = await this.ResellerReqTab2.textContent() ?? "";
 
 // 3. You can now use or print your string variable
-console.log(`Stored String Value: ${invoiceText}`);
+console.log(`Stored String Value: ${Tabstext}`);
 
 }
 

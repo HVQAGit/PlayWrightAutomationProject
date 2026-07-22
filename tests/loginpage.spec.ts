@@ -31,6 +31,7 @@ expect(pageTitle).toContain('Hitachi Vantara xGS TEST');
 await page.pause();
 //LoginPage.performDoLogout();
 LoginPage.ClickResellerRequestsTab();
+LoginPage.performDoLogout();
 
 // remove comment
 
