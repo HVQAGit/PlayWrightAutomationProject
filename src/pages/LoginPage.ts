@@ -112,11 +112,20 @@ async ClickResellerRequestsTab(){
      
    this.ResellerReqTab2.click();
       this.ResellerReqTab2.allTextContents();
+      this.ResellerReqTab2.getByText();
    //this.ResellerReqTab2.getByTitle();
    //console.log('ResellerReqTab2:',this.ResellerReqTab2.getByTitle("Reseller Requests")); 
    this.page.pause();
    //span[text()='Reseller Requests']
   
+   const locator = page.getByText('Invoice #');
+
+// 2. Extract and store the text as a string
+const invoiceText: string = await this.ResellerReqTab2.textContent() ?? "";
+
+// 3. You can now use or print your string variable
+console.log(`Stored String Value: ${invoiceText}`);
+
 }
 
 
