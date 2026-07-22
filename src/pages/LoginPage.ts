@@ -64,8 +64,8 @@ async getLoginPageTitle():Promise<string>{
 async performDoLogin(username : string, password : string ){
 
 
-  const usernameStr: string = String(process.env.USERNAME); 
-  const passwordnameStr: string = String(process.env.USERNAME); 
+  const usernameStr: string = String(process.env.USERNAME_YML!); 
+  const passwordStr: string = String(process.env.PASSWORD_YML); 
    console.log('usernameStr===');
    console.log(`Current Username: ${usernameStr}`);
 
@@ -75,7 +75,7 @@ async performDoLogin(username : string, password : string ){
  await this.email.fill(usernameStr);
  await this.continuebtn.click();
  //await this.password.fill(password);
- await this.password.fill(passwordnameStr);
+ await this.password.fill(passwordStr);
  await this.continuebtn.click();
  
 }
