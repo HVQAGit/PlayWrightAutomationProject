@@ -45,6 +45,7 @@ constructor(page:Page){  // //constructor is public because to allow other/exter
 
 
 async goToLoginPage():Promise<void> {
+
     console.log("BASE_URL==");
    console.log(process.env.BASE_URL!.length);
    console.log("BUSERNAME==");
@@ -53,6 +54,9 @@ async goToLoginPage():Promise<void> {
    console.log(process.env.PASSWORD!.length);
       
   
+   const usernameStr: string = String(process.env.USERNAME); 
+   console.log('usernameStr===');
+   console.log(`Current Username: ${usernameStr}`);
   await this.page.goto(process.env.BASE_URL!);
 
    
