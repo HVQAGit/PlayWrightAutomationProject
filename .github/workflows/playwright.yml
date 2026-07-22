@@ -15,6 +15,11 @@ jobs:
         node-version: lts/*
     - name: Install dependencies
       run: npm ci
+      env:
+          ENV: ${{ github.event.inputs.environment || 'QA' }}
+          BASE_URL: ${{ secrets.BASE_URL }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
