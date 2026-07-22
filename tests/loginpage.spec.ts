@@ -27,7 +27,7 @@ console.log("*******************checking in login spec file start **************
 console.log("USER_NAME=");
 console.log(username);
 console.log("PASSWORD=");
-console.log(password);//
+console.log(password);
 console.log("*******************checking in login spec file end****************");
 
 //await LoginPage.performDoLogin('metal-leather@5t4sxhkg.mailosaur.net','Hitachi#123');
