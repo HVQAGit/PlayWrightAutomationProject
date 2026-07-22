@@ -25,7 +25,7 @@ private readonly ResellerReqTab:Locator;
 private readonly ResellerReqTab2:Locator;
 
 
-constructor(page:Page){  // constructor is public because to allow other/external file to create object 
+constructor(page:Page){  // //constructor is public because to allow other/external file to create object 
     super(page)    // by mentioning super we are telling to call parent class constructor
     this.email=page.getByRole('textbox', {name:'Email address'});
     this.password=page.getByRole('textbox',{name:'Password'});
