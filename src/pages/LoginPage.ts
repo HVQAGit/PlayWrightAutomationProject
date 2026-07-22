@@ -85,7 +85,7 @@ async performDoLogout( ){
  
     await this.Logoutbtn.click();
     await this.Logoutlink.click();
-    await this.page.waitForURL('https://auth-stage.hitachivantara.com/');
+    //await this.page.waitForURL('https://auth-stage.hitachivantara.com/');
    // const Tabstext: string = await this.ResellerReqTab2.textContent() ?? "";
       const LoginPageAfterLogoutText: string = await this.LoginPageAfterLogout.textContent() ?? "";
     console.log(`Stored String Value: ${LoginPageAfterLogoutText}`);
