@@ -47,9 +47,10 @@ constructor(page:Page){  // //constructor is public because to allow other/exter
 async goToLoginPage():Promise<void> {
  
   console.log("BASE_URL==");
-  console.log(process.env.BASE_URL);
+
+  console.log(process.env.BASE_URL!);
   await this.page.goto(process.env.BASE_URL!);
-//
+
    
 }
 
