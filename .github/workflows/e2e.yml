@@ -1,10 +1,6 @@
 name: e2e CI/CD Pipeline
 
 on:
- #push:
-  #   branches: [master]
-   #  pull_request:
-    # branches: [main]
 
 workflow_dispatch:
     inputs:
@@ -20,7 +16,7 @@ workflow_dispatch:
           - Prod
 
 jobs:
-
+ run-manual-task:
   # ═════════════════════════════════════════════════════
   # STEP 1: BUILD APP + UNIT TESTS (DEV REPO - MAVEN)
   # ═════════════════════════════════════════════════════
