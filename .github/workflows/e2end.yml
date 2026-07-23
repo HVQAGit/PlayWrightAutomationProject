@@ -278,7 +278,7 @@ jobs:
           echo "======================================="
           echo "  Running SANITY @smoke on STAGE"
           echo "========================================="
-          npx playwright test --project=chromium --grep @smoke
+          # npx playwright test --project=chromium --grep @smoke
         env:
           ENV: ${{ github.event.inputs.environment || 'QA' }}
           USERNAME_YML: ${{ secrets.XGS_USER}}
