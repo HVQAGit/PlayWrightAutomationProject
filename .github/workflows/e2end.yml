@@ -280,15 +280,11 @@ jobs:
           echo "========================================="
           npx playwright test --project=chromium --grep @smoke
         env:
-          ENV: stage
-          BASE_URL: ${{ secrets.BASE_URL }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-          API_BASE_URL: ${{ secrets.API_BASE_URL }}
-          API_TOKEN: ${{ secrets.API_TOKEN }}
-          OAUTH_CLIENT_ID: ${{ secrets.OAUTH_CLIENT_ID }}
-          OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
-          GRANT_TYPE: ${{ secrets.GRANT_TYPE }}
+          ENV: ${{ github.event.inputs.environment || 'QA' }}
+          USERNAME_YML: ${{ secrets.XGS_USER}}
+          BASE_URL_YML: ${{ secrets.XGS_URL}}
+          #USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD_YML: ${{ secrets.XGS_PASSWORD}}
 
       - name: Generate Allure Report
         if: always()
