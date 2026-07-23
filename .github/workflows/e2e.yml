@@ -1,13 +1,18 @@
 # ═══════════════════════════════════════════════════════════════
 # FILE: .github/workflows/master-pipeline.yml
-# REPO: naveenanimation20/OpenCartWebAPIFramework
+# REPO: 
 # DEV REPO: jglick/simple-maven-project-with-tests
 # ═══════════════════════════════════════════════════════════════
 
 name: e2e CI/CD Pipeline
-#
+
 on:
-  workflow_dispatch:
+ push:
+     branches: [master]
+     pull_request:
+     branches: [main]
+
+workflow_dispatch:
     inputs:
       environment:
         description: 'Run up to environment'
