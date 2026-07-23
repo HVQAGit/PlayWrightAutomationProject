@@ -167,7 +167,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIFramework
+          repository: HVQAGit/PlayWrightAutomationProject
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -252,7 +252,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIFramework
+          repository: HVQAGit/PlayWrightAutomationProject
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -338,7 +338,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIFramework
+          repository: HVQAGit/PlayWrightAutomationProject
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -609,7 +609,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "🎭 CI/CD Pipeline — ${{ steps.status.outputs.overall }} — ${{ github.ref_name }}"
-          to: naveenanimation20@gmail.com,training@naveenautomationlabs.com,nkt.agarwal3@gmail.com,kdpatel8184@gmail.com
+          to: mohang.goud@gmail.com
           from: "CI Bot <${{ secrets.EMAIL_USERNAME }}>"
           html_body: file://dashboard.html
 
