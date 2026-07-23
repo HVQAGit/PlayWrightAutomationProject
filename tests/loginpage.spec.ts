@@ -22,9 +22,9 @@ const pageTitle=await LoginPage.getLoginPageTitle();
 console.log('login page Title', pageTitle);
 const username: string = process.env.USERNAME_YML!;
 const password: string = process.env.PASSWORD_YML!;
+//
 
 
-//await LoginPage.performDoLogin('metal-leather@5t4sxhkg.mailosaur.net','Hitachi#123');
 await LoginPage.performDoLogin(process.env.USERNAME_YML! , process.env.PASSWORD_YML!);
 //expect(pageTitle).toBe('Hitachi Vantara xGS TEST');
 expect(pageTitle).toContain('Hitachi Vantara xGS TEST');
