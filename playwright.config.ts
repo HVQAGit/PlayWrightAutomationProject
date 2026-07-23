@@ -29,7 +29,7 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
      // baseURL: 'https://xgs-uat.hitachivantara.com/',
-     baseURL:process.env.BASEURL,
+     baseURL:process.env.BASE_URL_YML,
      screenshot :'only-on-failure',
      video : 'retain-on-failure',
      trace : 'on-first-retry',
