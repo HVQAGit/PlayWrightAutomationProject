@@ -203,7 +203,7 @@ jobs:
            ENV: ${{ github.event.inputs.environment || 'QA' }}
            USERNAME_YML: ${{ secrets.XGS_USER}}
            BASE_URL_YML: ${{ secrets.XGS_URL}}
-           #USERNAME: ${{ secrets.USERNAME }}
+           #USERNAME: ${{ secrets.USERNAME }}#
            PASSWORD_YML: ${{ secrets.XGS_PASSWORD}}
       - name: Generate Allure Report
         if: always()
