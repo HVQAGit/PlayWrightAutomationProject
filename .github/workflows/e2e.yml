@@ -1,9 +1,3 @@
-# ═══════════════════════════════════════════════════════════════
-# FILE: .github/workflows/master-pipeline.yml
-# REPO: 
-# DEV REPO: jglick/simple-maven-project-with-tests
-# ═══════════════════════════════════════════════════════════════
-
 name: e2e CI/CD Pipeline
 
 on:
