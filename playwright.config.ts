@@ -23,7 +23,8 @@ export default defineConfig({
   workers: process.env.CI ? '50%' : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
  reporter: [
-    ['html', { outputFolder: 'reports/html-report' }]
+    ['html', { outputFolder: 'reports/html-report' }],
+    ['allure-playwright', { outputFolder: 'allure-results' }] 
   ],
 
  
