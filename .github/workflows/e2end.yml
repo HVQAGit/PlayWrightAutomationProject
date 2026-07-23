@@ -601,7 +601,7 @@ jobs:
           DASHBOARD
 
       - name: Send Email with Dashboard
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@v6
         with:
           server_address: smtp.hostinger.com
           server_port: 465
@@ -615,7 +615,7 @@ jobs:
 
       - name: Send Slack Notification
         if: always()
-        uses: 8398a7/action-slack@v3
+        uses: 8398a7/action-slack@v6
         with:
           status: custom
           custom_payload: |
