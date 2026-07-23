@@ -82,7 +82,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIFramework
+          repository: HVQAGit/PlayWrightAutomationProject
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
