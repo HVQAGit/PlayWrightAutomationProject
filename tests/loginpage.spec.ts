@@ -27,7 +27,7 @@ const password: string = process.env.PASSWORD_YML!;
 
 await LoginPage.performDoLogin(process.env.USERNAME_YML! , process.env.PASSWORD_YML!);
 //expect(pageTitle).toBe('Hitachi Vantara xGS TEST');
-expect(pageTitle).toContain('Hitachi Vantara xGS TEST');
+expect(pageTitle).toContain('Hitachi Vantara xGS TWEST');
 await page.pause();
 //LoginPage.performDoLogout();
 LoginPage.ClickResellerRequestsTab();
