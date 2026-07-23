@@ -275,7 +275,7 @@ jobs:
 
       - name: Run Sanity Tests on STAGE
         run: |
-          echo "========================================="
+          echo "======================================="
           echo "  Running SANITY @smoke on STAGE"
           echo "========================================="
           npx playwright test --project=chromium --grep @smoke
