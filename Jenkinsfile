@@ -5,7 +5,7 @@ pipeline {
 
     tools {
         maven 'maven-3.9.16'
-        jdk 'JDK-17'
+        jdk 'JDK-21'
     }
 
     parameters {
