@@ -1,9 +1,4 @@
-// ═══════════════════════════════════════════════════════════════
-// Jenkinsfile — Master CI/CD Pipeline (Docker)
-// Playwright TypeScript Framework
-// Tests run inside Docker containers
-// Naveen Automation Labs
-// ═══════════════════════════════════════════════════════════════
+
 
 pipeline {
     agent any
