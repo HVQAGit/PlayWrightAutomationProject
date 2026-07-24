@@ -29,7 +29,7 @@ private readonly ResellerReqTab2:Locator;
 private readonly LoginPageAfterLogout:Locator;
 
 constructor(page:Page){  // //constructor is public because to allow other/external file to create object 
-    super(page)    // by mentioning super we are telling to call parent class constructor
+    super(page)   // // by mentioning super we are telling to call parent class constructor
     this.email=page.getByRole('textbox', {name:'Email address'});
     this.password=page.getByRole('textbox',{name:'Password'});
    // this.Logoutbtn=page.getByRole('img', { name: 'NewHitachiVantaraLogo' });

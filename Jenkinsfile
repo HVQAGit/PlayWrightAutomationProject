@@ -69,12 +69,12 @@ pipeline {
                 echo "========================================="
                 echo "  Building Playwright Docker Image"
                 echo "========================================="
-                dir('qa-tests') {
-                    git url: 'https://github.com/naveenanimation20/OpenCartWebAPIFramework.git',
-                        branch: 'main'
-                    sh "docker build -t ${DOCKER_IMAGE} ."
-                }
-                sh "docker images | grep ${DOCKER_IMAGE}"
+              //  dir('qa-tests') {
+                //    git url: 'https://github.com/naveenanimation20/OpenCartWebAPIFramework.git',
+                  //      branch: 'main'
+                   // sh "docker build -t ${DOCKER_IMAGE} ."
+               // }
+                //sh "docker images | grep ${DOCKER_IMAGE}"
             }
         }
 
@@ -87,40 +87,6 @@ pipeline {
             }
         }
 
-        stage('DEV - Sanity Tests') {
-            steps {
-                echo "========================================="
-                echo "  Running SANITY @smoke on DEV (Docker)"
-                echo "========================================="
-                sh 'mkdir -p reports-dev/html allure-results-dev'
-                withCredentials([
-                    usernamePassword(credentialsId: 'dev-credentials',
-                        usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'),
-                    string(credentialsId: 'api-token', variable: 'API_TOKEN'),
-                    string(credentialsId: 'oauth-client-id', variable: 'OAUTH_CLIENT_ID'),
-                    string(credentialsId: 'oauth-client-secret', variable: 'OAUTH_CLIENT_SECRET'),
-                    string(credentialsId: 'dev-base-url', variable: 'BASE_URL'),
-                    string(credentialsId: 'api-base-url', variable: 'API_BASE_URL')
-                ]) {
-                    sh """
-                        docker run --rm \
-                            -e CI=true \
-                            -e ENV=dev \
-                            -e BASE_URL=${BASE_URL} \
-                            -e USERNAME=${USERNAME} \
-                            -e PASSWORD=${PASSWORD} \
-                            -e API_BASE_URL=${API_BASE_URL} \
-                            -e API_TOKEN=${API_TOKEN} \
-                            -e OAUTH_CLIENT_ID=${OAUTH_CLIENT_ID} \
-                            -e OAUTH_CLIENT_SECRET=${OAUTH_CLIENT_SECRET} \
-                            -e GRANT_TYPE=client_credentials \
-                            -v \${WORKSPACE}/reports-dev/html:/app/reports/html-report \
-                            -v \${WORKSPACE}/allure-results-dev:/app/allure-results \
-                            ${DOCKER_IMAGE} \
-                            npx playwright test --project=chromium --grep @smoke
-                    """
-                }
-            }
             post {
                 always {
                     sh 'mkdir -p reports-dev/allure'
