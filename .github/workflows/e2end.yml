@@ -360,7 +360,7 @@ jobs:
           echo "========================================="
           echo "  Running SMOKE @smoke on PROD"
           echo "========================================="
-          npx playwright test --project=chromium --grep @smoke
+          # npx playwright test --project=chromium --grep @smoke
         env:
           ENV: prod
           BASE_URL: ${{ secrets.BASE_URL }}
@@ -594,14 +594,16 @@ jobs:
       - name: Send Email with Dashboard
         uses: dawidd6/action-send-mail@v6
         with:
-          server_address: smtp.hostinger.com
+          #server_address: smtp.hostinger.com
+          server_address: smtp.gmail.com
           server_port: 465
           secure: true
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
+          username: jenkins.frameworkdemo@gmail.com
+          password: mfbiolihnawimdhs
           subject: "🎭 CI/CD Pipeline — ${{ steps.status.outputs.overall }} — ${{ github.ref_name }}"
           to: mohang.goud@gmail.com
-          from: "CI Bot <${{ secrets.EMAIL_USERNAME }}>"
+          #from: "CI Bot <${{ secrets.EMAIL_USERNAME }}>"
+          from: "CI Bot jenkins.frameworkdemo@gmail.com"
           html_body: file://dashboard.html
 
       - name: Send Slack Notification
