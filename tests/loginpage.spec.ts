@@ -32,6 +32,7 @@ await page.pause();
 //LoginPage.performDoLogout();
 LoginPage.ClickResellerRequestsTab();
 LoginPage.performDoLogout();
+LoginPage.sendEmailReport();
 
 // remove comment
 
